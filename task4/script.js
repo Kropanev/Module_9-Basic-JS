@@ -1,8 +1,9 @@
-let content = prompt('Введите текст:')
+let link = document.querySelector('#link');
 
-link.textContent = content;
+link.addEventListener('click', (e) => {
+	let content = prompt('Введите текст:');
 
-
-
-
-
+	e.preventDefault();
+	
+	link.textContent = content;
+});
