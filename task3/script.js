@@ -1,26 +1,45 @@
-const trafficLightEl = document.querySelector('#trafficLight');
+const trafficLightEl = document.querySelectorAll('#trafficLight'),
+	  colorArray = ['green', 'yellow', 'red'];
 
-function makeYellow() {
-    trafficLightEl.style.background = ('yellow');
-    trafficLightEl.removeEventListener('click', makeYellow);
-    trafficLightEl.addEventListener('click', makeRed);
-}
+let flag = -1;
 
-trafficLightEl.addEventListener('click', makeYellow);
+trafficLightEl.forEach(item => {
+	item.addEventListener('click', () => {
 
-function makeGreen() {
-    trafficLightEl.style.background = ('green');
-    trafficLightEl.removeEventListener('click', makeGreen);
-    trafficLightEl.addEventListener('click', makeYellow);
-}
+		trafficLightEl.forEach(ball => {
+			ball.style.background = 'black';
+		})
 
-trafficLightEl.addEventListener('click', makeGreen);
+		flag += 1;
+		if (flag >= trafficLightEl.length) {
+			flag = 0;
+		}
 
-function makeRed() {
-    trafficLightEl.style.background = ('red');
-    trafficLightEl.removeEventListener('click', makeRed);
-    trafficLightEl.addEventListener('click', makeGreen);
+		trafficLightEl[flag].style.background = colorArray[flag];
+	});
+});	
 
-}
 
-trafficLightEl.addEventListener('click', makeYellow);
+// function makeYellow() {
+//     		trafficLightEl[flag].style.background = ('yellow');
+//     		trafficLightEl[flag].removeEventListener('click', makeYellow);
+//     		trafficLightEl[flag].addEventListener('click', makeRed);
+// 		}
+
+// 		item.addEventListener('click', makeYellow);
+
+// 		function makeGreen() {
+//     		trafficLightEl[flag].style.background = ('green');
+//     		trafficLightEl[flag].removeEventListener('click', makeGreen);
+//     		trafficLightEl[flag].addEventListener('click', makeYellow);
+// 		}
+
+// 		item.addEventListener('click', makeGreen);
+	
+// 		function makeRed() {
+//     		trafficLightEl[flag].style.background = ('red');
+//     		trafficLightEl[flag].removeEventListener('click', makeRed);
+//     		trafficLightEl[flag].addEventListener('click', makeGreen);
+// 		}
+
+// 		item.addEventListener('click', makeRed);

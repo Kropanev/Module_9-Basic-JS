@@ -1,20 +1,6 @@
 #trafficLight {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: black;
-  }
-
-#trafficLight2 {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: black;
-  }
-
-#trafficLight3 {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: black;
-  }
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: black;
+}
